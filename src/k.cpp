@@ -4,8 +4,52 @@ using namespace std;
 #define ll long long
 const int N = 1e5 + 5;
 
+int n, w, temp, ans;
+priority_queue<int, vector<int>, greater<>> ut, dt;
+
+void invalid() {
+	cout << -1 << '\n';
+	exit(0);
+}
+
 void Main() {
-    
+    cin >> n >> w;
+	for(int i = 0; i < n; i++) {
+		cin >> temp;
+		dt.push(temp);
+	}
+
+	if(n == 1) {
+		if(dt.top() > w) invalid();
+		else {
+			cout << 1 << '\n';
+			return;
+		}
+	}
+
+	int x, y, z;
+	while(!dt.empty()) {
+		x = dt.top(); dt.pop();
+		y = dt.top(); dt.pop();
+		if(x + y <= w) {
+			if(dt.empty()) {
+				ans++;
+				break;
+			}
+			ans += 2;
+			ut.push(y);
+			dt.push(x);
+		}
+		else if(y <= w) {
+			if(ut.empty()) invalid(); // any people not exist for back
+			ans += 2;
+			z = ut.top(); ut.pop();
+			ut.push(y);
+			dt.push(x); dt.push(z);
+		}
+		else invalid(); // some wieght of persons exceed of maximum
+	}
+	cout << ans << '\n';
 }
 
 int main() {
