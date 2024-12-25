@@ -9,8 +9,8 @@
 
 | letter | name | status |
 |:---:|:---:|:---:|
-|[A](./a.cpp)|Yalda|null|
-|[B](./b.cpp)|Divar’s Salaries|null|
+|[A](./a.cpp)|Yalda|Accept|
+|[B](./b.cpp)|Divar’s Salaries|Accept|
 |[C](./c.cpp)|GPT DarkDown|null|
 |[D](./d.cpp)|Electromagnetic Attacks|null|
 |[E](./e.cpp)|PCB|null|
@@ -19,7 +19,7 @@
 |[H](./h.cpp)|Anti-Missile|null|
 |[I](./i.cpp)|Conference Rides|null|
 |[J](./j.cpp)|Parking Theory|null|
-|[K](./k.cpp)|Boat|null|
+|[K](./k.cpp)|Boat|Accept|
 </div>
 
 <br><details><summary><strong> Test Cases (click to expand)</strong></summary>
@@ -79,8 +79,28 @@ problem I has not any test case!
 
 problem J has not any test case!
 ### problem K
+#### Example 1:
+* **input:**
+```bash
+3 7
+1 3 4
+```
+* **output:**
+```bash
+3
+```
 
-problem K has not any test case!
+#### Example 2:
+* **input:**
+```bash
+3 4
+2 3 4
+```
+* **output:**
+```bash
+-1
+```
+
 
 </details>
 
